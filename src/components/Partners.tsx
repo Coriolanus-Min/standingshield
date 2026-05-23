@@ -3,21 +3,21 @@
 import { motion } from "framer-motion";
 
 const platformsTop = [
-  { name: "Amazon", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg", url: "#" },
-  { name: "Temu", logo: "https://upload.wikimedia.org/wikipedia/commons/4/41/Temu_logo.svg", url: "#" },
-  { name: "AliExpress", logo: "https://upload.wikimedia.org/wikipedia/commons/2/23/Aliexpress-logo.svg", url: "#" },
-  { name: "Shopee", logo: "https://upload.wikimedia.org/wikipedia/commons/f/fe/Shopee.svg", url: "#" },
-  { name: "Lazada", logo: "https://upload.wikimedia.org/wikipedia/commons/4/4d/Lazada_%282019%29.svg", url: "#" },
-  { name: "Wish", logo: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Wish_Company_Logo.svg", url: "#" },
+  { name: "Amazon", logo: "/images/logos/amazon.svg", url: "#" },
+  { name: "Temu", logo: "/images/logos/temu.svg", url: "#" },
+  { name: "AliExpress", logo: "/images/logos/aliexpress.svg", url: "#" },
+  { name: "Shopee", logo: "/images/logos/shopee.svg", url: "#" },
+  { name: "Lazada", logo: "/images/logos/lazada.svg", url: "#" },
+  { name: "Wish", logo: "/images/logos/wish.svg", url: "#" },
 ];
 
 const platformsBottom = [
-  { name: "SHEIN", logo: "https://upload.wikimedia.org/wikipedia/commons/1/13/Shein_logo.png", url: "#" },
-  { name: "eBay", logo: "https://upload.wikimedia.org/wikipedia/commons/1/1b/EBay_logo.svg", url: "#" },
-  { name: "DHgate", logo: "https://www.dhresource.com/mobile/images/dh_logo_2016.png", url: "#" },
-  { name: "Alibaba", logo: "https://upload.wikimedia.org/wikipedia/commons/9/91/Alibaba_Group_logo.svg", url: "#" },
-  { name: "Global Sources", logo: "https://logodix.com/logo/1845688.jpg", url: "#" },
-  { name: "Walmart", logo: "https://upload.wikimedia.org/wikipedia/commons/c/ca/Walmart_logo.svg", url: "#" },
+  { name: "SHEIN", logo: "/images/logos/shein.svg", url: "#" },
+  { name: "eBay", logo: "/images/logos/ebay.svg", url: "#" },
+  { name: "DHgate", logo: "/images/logos/dhgate.svg", url: "#" },
+  { name: "Alibaba", logo: "/images/logos/alibaba.svg", url: "#" },
+  { name: "Global Sources", logo: "/images/logos/global_sources.svg", url: "#" },
+  { name: "Walmart", logo: "/images/logos/walmart.svg", url: "#" },
 ];
 
 export default function Partners() {
