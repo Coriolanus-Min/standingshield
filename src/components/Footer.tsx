@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 
 export default function Footer() {
@@ -27,11 +28,11 @@ export default function Footer() {
           <div className="col-span-1">
             <h3 className="text-lg font-bold uppercase tracking-wider mb-6 text-white border-b border-orange-500/50 pb-2 inline-block">About Us</h3>
             <ul className="space-y-4">
-              <li><a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">Our Story</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">Factory & Process</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">Material Science</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">Sustainability</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">Careers</a></li>
+              <li><Link href="/#products" className="text-gray-400 hover:text-orange-500 transition-colors">Our Story</Link></li>
+              <li><Link href="/#factory" className="text-gray-400 hover:text-orange-500 transition-colors">Factory & Process</Link></li>
+              <li><Link href="/#tech" className="text-gray-400 hover:text-orange-500 transition-colors">Material Science</Link></li>
+              <li><Link href="/#factory" className="text-gray-400 hover:text-orange-500 transition-colors">Sustainability</Link></li>
+              <li><Link href="/contact" className="text-gray-400 hover:text-orange-500 transition-colors">Careers</Link></li>
             </ul>
           </div>
 
@@ -39,11 +40,11 @@ export default function Footer() {
           <div className="col-span-1">
             <h3 className="text-lg font-bold uppercase tracking-wider mb-6 text-white border-b border-orange-500/50 pb-2 inline-block">Support</h3>
             <ul className="space-y-4">
-              <li><a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">B2B Wholesale Inquiry</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">Custom Logo Etching</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">Shipping & Returns</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">Lifetime Warranty</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">FAQ</a></li>
+              <li><Link href="/contact" className="text-gray-400 hover:text-orange-500 transition-colors">B2B Wholesale Inquiry</Link></li>
+              <li><Link href="/contact" className="text-gray-400 hover:text-orange-500 transition-colors">Custom Logo Etching</Link></li>
+              <li><Link href="/faq" className="text-gray-400 hover:text-orange-500 transition-colors">Shipping & Returns</Link></li>
+              <li><Link href="/faq" className="text-gray-400 hover:text-orange-500 transition-colors">Lifetime Warranty</Link></li>
+              <li><Link href="/faq" className="text-gray-400 hover:text-orange-500 transition-colors">FAQ</Link></li>
             </ul>
           </div>
 

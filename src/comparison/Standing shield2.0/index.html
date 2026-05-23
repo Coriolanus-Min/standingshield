@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standing Shield - Your All-Scene Shield</title>
+    <meta name="description" content="Standing Shield: Hardcore insulation meets urban aesthetics. Premium tumblers built for the wild, sleek enough for the city.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar">
+        <div class="navbar-left">
+            <button id="menuBtn" aria-label="Open menu" class="icon-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" y1="12" x2="20" y2="12"></line>
+                    <line x1="4" y1="6" x2="20" y2="6"></line>
+                    <line x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="navbar-center">
+            <h1 class="logo">
+                Standing <span class="logo-shield">shield</span>
+            </h1>
+        </div>
+        <div class="navbar-right">
+            <button id="cartBtn" aria-label="Shopping bag" class="icon-btn cart-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                <span class="cart-badge">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="menuBackdrop" class="menu-backdrop"></div>
+    <div id="menuDrawer" class="menu-drawer">
+        <div class="menu-header">
+            <h2>Menu</h2>
+            <button id="closeMenu" class="close-btn" aria-label="Close menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <nav class="menu-nav">
+            <a href="#hero" class="menu-link">Home</a>
+            <a href="#products" class="menu-link">Products</a>
+            <a href="#factory" class="menu-link">Our Process</a>
+            <a href="#partners" class="menu-link">Distribution</a>
+            <a href="#faq" class="menu-link">FAQ</a>
+            <a href="#contact" class="menu-link">Contact</a>
+        </nav>
+        <div class="menu-footer">
+            <div class="menu-social">
+                <a href="#" aria-label="Facebook" class="social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                </a>
+                <a href="#" aria-label="Instagram" class="social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+                <a href="#" aria-label="LinkedIn" class="social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Carousel -->
+    <section id="hero" class="hero-carousel">
+        <div class="carousel-container">
+            <div class="carousel-slides">
+                <!-- Slide 1 -->
+                <div class="carousel-slide active" data-index="0">
+                    <img src="images/scene_active_life.png" alt="Active Life">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <p class="slide-subtitle">Active Life</p>
+                        <h2 class="slide-title">Stand Firm,<br>Stay Cool.</h2>
+                        <p class="slide-description">Your Standing Shield tumbler, laser-engraved with our signature camel rider, standing by your side at the gym.</p>
+                        <button class="btn-primary">Explore Collection</button>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-slide" data-index="1">
+                    <img src="images/scene_outdoor_escape.png" alt="Outdoor Escape">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <p class="slide-subtitle">Outdoor Escape</p>
+                        <h2 class="slide-title">Built for<br>the Wild.</h2>
+                        <p class="slide-description">Rugged durability with a refined laser-engraved finish. Your all-scene shield for any adventure.</p>
+                        <button class="btn-primary">Explore Collection</button>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-slide" data-index="2">
+                    <img src="images/scene_urban_rush.png" alt="Urban Rush">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <p class="slide-subtitle">Urban Rush</p>
+                        <h2 class="slide-title">Shield Your<br>Morning.</h2>
+                        <p class="slide-description">Sleek, minimalist matte black design featuring our elegant camel logo for your daily commute.</p>
+                        <button class="btn-primary">Explore Collection</button>
+                    </div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="carousel-slide" data-index="3">
+                    <img src="images/scene_deep_work.png" alt="Deep Work">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <p class="slide-subtitle">Deep Work</p>
+                        <h2 class="slide-title">Focus.<br>We Guard the Rest.</h2>
+                        <p class="slide-description">Keep your coffee hot and your focus sharp with our premium engraved tumblers on your desk.</p>
+                        <button class="btn-primary">Explore Collection</button>
+                    </div>
+                </div>
+                <!-- Slide 5 -->
+                <div class="carousel-slide" data-index="4">
+                    <img src="images/scene_road_trip.png" alt="Road Trip">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <p class="slide-subtitle">Road Trip</p>
+                        <h2 class="slide-title">Shield Your<br>Journey.</h2>
+                        <p class="slide-description">Perfectly fits your luxury car cup holder. Travel in style with our signature laser-engraved logo.</p>
+                        <button class="btn-primary">Explore Collection</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Carousel Navigation Arrows -->
+            <button class="carousel-arrow carousel-prev" aria-label="Previous slide">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button class="carousel-arrow carousel-next" aria-label="Next slide">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+            <!-- Carousel Pagination -->
+            <div class="carousel-pagination">
+                <button class="pagination-bullet active" data-index="0"></button>
+                <button class="pagination-bullet" data-index="1"></button>
+                <button class="pagination-bullet" data-index="2"></button>
+                <button class="pagination-bullet" data-index="3"></button>
+                <button class="pagination-bullet" data-index="4"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Showcase Section -->
+    <section id="products" class="products-section">
+        <div class="products-header">
+            <p class="section-label">Collection</p>
+            <h2 class="section-title">Shield Series</h2>
+            <p class="section-description">Premium laser-engraved stainless steel tumblers, engineered for performance and styled for every scene.</p>
+        </div>
+        <div class="products-grid">
+            <!-- Product Card 1 -->
+            <div class="product-card" data-color="black">
+                <div class="product-image">
+                    <img src="images/tumbler_midnight_black_1772804852319.png" alt="Midnight Black Tumbler">
+                    <div class="product-overlay">
+                        <button class="btn-quick-view" data-product="black">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            Quick View
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Midnight Black</h3>
+                    <p class="product-desc">Sleek matte finish with signature laser engraving</p>
+                    <div class="product-meta">
+                        <span class="product-price">$39.99</span>
+                        <span class="product-sku">SKU: SS-30-BLK</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Product Card 2 -->
+            <div class="product-card" data-color="grey">
+                <div class="product-image">
+                    <img src="images/tumbler_meteorite_grey_1772804871359.png" alt="Meteorite Grey Tumbler">
+                    <div class="product-overlay">
+                        <button class="btn-quick-view" data-product="grey">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            Quick View
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Meteorite Grey</h3>
+                    <p class="product-desc">Industrial aesthetic with refined texture</p>
+                    <div class="product-meta">
+                        <span class="product-price">$39.99</span>
+                        <span class="product-sku">SKU: SS-30-GRY</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Product Card 3 -->
+            <div class="product-card" data-color="oatmeal">
+                <div class="product-image">
+                    <img src="images/tumbler_oatmeal_1772804907053.png" alt="Oatmeal Beige Tumbler">
+                    <div class="product-overlay">
+                        <button class="btn-quick-view" data-product="oatmeal">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            Quick View
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Oatmeal Beige</h3>
+                    <p class="product-desc">Warm neutral tone for modern minimalists</p>
+                    <div class="product-meta">
+                        <span class="product-price">$39.99</span>
+                        <span class="product-sku">SKU: SS-30-OAT</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Product Card 4 - Coming Soon -->
+            <div class="product-card coming-soon" data-color="white">
+                <div class="product-image">
+                    <img src="images/tech_tumbler.png" alt="Glacier White Tumbler">
+                    <div class="coming-soon-badge">Coming Soon</div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Glacier White</h3>
+                    <p class="product-desc">Pristine white with premium finish</p>
+                    <div class="product-meta">
+                        <span class="product-price">TBA</span>
+                        <span class="product-sku">SKU: SS-30-WHT</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="products-cta">
+            <button class="btn-primary btn-large">
+                View Full Collection
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- Factory Process Section -->
+    <section id="factory" class="factory-section">
+        <div class="factory-header">
+            <p class="section-label">Behind The Shield</p>
+            <h2 class="section-title">The Making Of</h2>
+        </div>
+        <div class="factory-track-container">
+            <div class="factory-track">
+                <div class="factory-item">
+                    <div class="factory-card">
+                        <img src="images/factory_coating.png" alt="Precision Coating">
+                        <div class="factory-card-overlay">
+                            <h3>01. Precision Coating</h3>
+                            <p>Premium matte finish applied in a state-of-the-art dust-free booth.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="factory-item">
+                    <div class="factory-card">
+                        <img src="images/factory_assembly.png" alt="Cleanroom Assembly">
+                        <div class="factory-card-overlay">
+                            <h3>02. Cleanroom Assembly</h3>
+                            <p>Meticulous assembly process ensuring the vacuum seal integrity.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="factory-item">
+                    <div class="factory-card">
+                        <img src="images/factory_laser.png" alt="Signature Laser Engraving">
+                        <div class="factory-card-overlay">
+                            <h3>03. Signature Laser Engraving</h3>
+                            <p>High-precision blue laser etching our iconic camel rider logo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="factory-item">
+                    <div class="factory-card">
+                        <img src="images/factory_qc.png" alt="Rigorous QC">
+                        <div class="factory-card-overlay">
+                            <h3>04. Rigorous QC</h3>
+                            <p>Robotic durability and thermal retention testing.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="factory-item">
+                    <div class="factory-card">
+                        <img src="images/factory_shipping.png" alt="Global Dispatch">
+                        <div class="factory-card-overlay">
+                            <h3>05. Global Dispatch</h3>
+                            <p>Palletized and loaded into containers, ready to shield you worldwide.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="factory-progress">
+            <div class="factory-progress-bar"></div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners" class="partners-section">
+        <div class="partners-header">
+            <h2 class="section-title">Global Distribution</h2>
+            <p class="partners-description">Supplying premium drinkware at scale across the world's most dominant e-commerce and wholesale platforms.</p>
+        </div>
+        <!-- Top Row - Moving Left -->
+        <div class="partners-row">
+            <div class="partners-track partners-track-left">
+                <div class="partner-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon"></div>
+                <div class="partner-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Temu_logo.svg" alt="Temu"></div>
+                <div class="partner-logo"><img src="https://cdn.simpleicons.org/aliexpress" alt="AliExpress"></div>
+                <div class="partner-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Shopee.svg" alt="Shopee"></div>
+                <div class="partner-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Lazada_%282019%29.svg" alt="Lazada"></div>
+                <div class="partner-logo"><img src="https://cdn.simpleicons.org/wish" alt="Wish"></div>
+                <!-- Duplicate for seamless loop -->
+                <div class="partner-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon"></div>
+                <div class="partner-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Temu_logo.svg" alt="Temu"></div>
+                <div class="partner-logo"><img src="https://cdn.simpleicons.org/aliexpress" alt="AliExpress"></div>
+                <div class="partner-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Shopee.svg" alt="Shopee"></div>
+                <div class="partner-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Lazada_%282019%29.svg" alt="Lazada"></div>
+                <div class="partner-logo"><img src="https://cdn.simpleicons.org/wish" alt="Wish"></div>
+            </div>
+        </div>
+        <!-- Bottom Row - Moving Right -->
+        <div class="partners-row">
+            <div class="partners-track partners-track-right">
+                <div class="partner-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Shein_Logo_2017.svg" alt="SHEIN"></div>
+                <div class="partner-logo"><img src="https://cdn.simpleicons.org/ebay" alt="eBay"></div>
+                <div class="partner-logo"><img src="https://cdn.simpleicons.org/etsy" alt="Etsy"></div>
+                <div class="partner-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Alibaba_en_logo.svg" alt="Alibaba"></div>
+                <div class="partner-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Alibaba_zh_logo.svg" alt="1688"></div>
+                <div class="partner-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Walmart_logo_%282008%29.svg" alt="Walmart"></div>
+                <!-- Duplicate for seamless loop -->
+                <div class="partner-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Shein_Logo_2017.svg" alt="SHEIN"></div>
+                <div class="partner-logo"><img src="https://cdn.simpleicons.org/ebay" alt="eBay"></div>
+                <div class="partner-logo"><img src="https://cdn.simpleicons.org/etsy" alt="Etsy"></div>
+                <div class="partner-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Alibaba_en_logo.svg" alt="Alibaba"></div>
+                <div class="partner-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Alibaba_zh_logo.svg" alt="1688"></div>
+                <div class="partner-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Walmart_logo_%282008%29.svg" alt="Walmart"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="faq-header">
+            <p class="section-label">Support</p>
+            <h2 class="section-title">Frequently Asked</h2>
+        </div>
+        <div class="faq-container">
+            <div class="faq-list">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is the minimum wholesale order quantity?</span>
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our minimum wholesale order starts at 100 units. For custom logo etching orders, we require a minimum of 500 units. Bulk discounts are available for orders exceeding 1,000 units.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is the thermal retention performance?</span>
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our 30oz Shield Tumbler keeps beverages hot for up to 12 hours and cold for up to 24 hours. The double-wall vacuum insulation is tested under rigorous conditions to ensure consistent performance.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I customize the laser engraving?</span>
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We offer custom laser engraving for B2B orders. You can replace our signature camel rider logo with your brand logo. Custom engraving requires a minimum order of 500 units and an additional setup fee.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What materials are used in production?</span>
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>All Standing Shield tumblers are crafted from premium 18/8 food-grade stainless steel with a BPA-free lid. The exterior features our proprietary matte powder coating that is scratch-resistant and provides a premium grip.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is the warranty policy?</span>
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We stand behind our products with a lifetime warranty against manufacturing defects. This covers vacuum seal failure, coating defects, and structural issues. Normal wear and tear are not covered.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="newsletter-section">
+        <div class="newsletter-container">
+            <div class="newsletter-content">
+                <h2 class="newsletter-title">Stay in the Loop</h2>
+                <p class="newsletter-desc">Get exclusive updates on new releases, B2B deals, and insider offers. No spam, just the good stuff.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="input-group">
+                        <input type="email" placeholder="Enter your email" required aria-label="Email address">
+                        <button type="submit" class="btn-subscribe">
+                            Subscribe
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        </button>
+                    </div>
+                    <p class="form-hint">By subscribing, you agree to our Privacy Policy</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Brand Column -->
+                <div class="footer-brand">
+                    <h2 class="logo logo-large">
+                        Standing<br><span class="logo-shield">shield</span>
+                    </h2>
+                    <p class="footer-tagline">Hardcore insulation meets urban aesthetics. We engineer premium, laser-engraved stainless steel drinkware built for the wild, sleek enough for the city.</p>
+                </div>
+
+                <!-- About Us -->
+                <div class="footer-column">
+                    <h3 class="footer-heading">About Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Factory & Process</a></li>
+                        <li><a href="#">Material Science</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="footer-column">
+                    <h3 class="footer-heading">Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">B2B Wholesale Inquiry</a></li>
+                        <li><a href="#">Custom Logo Etching</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Lifetime Warranty</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-column">
+                    <h3 class="footer-heading">Contact</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <span>123 Industrial Park, Manufacturing District, Global Hub</span>
+                        </li>
+                        <li>
+                            <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            <span>+1 (800) 123-4567</span>
+                        </li>
+                        <li>
+                            <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            <a href="mailto:b2b@standingshield.com">b2b@standingshield.com</a>
+                        </li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                        <a href="#" aria-label="Twitter" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Standing Shield. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer -->
+    <div id="cartBackdrop" class="cart-backdrop"></div>
+    <div id="cartDrawer" class="cart-drawer">
+        <div class="cart-header">
+            <h2>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cart-header-icon"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                Your Selection
+            </h2>
+            <button id="closeCart" class="close-btn" aria-label="Close cart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+
+        <div class="cart-content">
+            <div class="product-preview">
+                <img id="productImage" src="images/tumbler_midnight_black_1772804852319.png" alt="Tumbler">
+                <div class="preview-logo">ST</div>
+            </div>
+
+            <div class="product-info">
+                <div class="product-header">
+                    <h3>30oz Shield Tumbler</h3>
+                    <span class="product-price">$39.99<span>/unit</span></span>
+                </div>
+                <p class="product-min">Minimum Wholesale Order: 100 units</p>
+                <div class="shipping-notice">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                    Ships globally via connected wholesale partners in 3-5 days.
+                </div>
+            </div>
+
+            <div class="color-selector">
+                <div class="color-header">
+                    <span class="color-label">Color Explorer</span>
+                    <span id="colorName" class="color-name">Midnight Black</span>
+                </div>
+                <div class="color-options">
+                    <button class="color-btn active" data-color="black" data-name="Midnight Black" style="background-color: #111111" data-image="images/tumbler_midnight_black_1772804852319.png">
+                        <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                    <button class="color-btn" data-color="grey" data-name="Meteorite Grey" style="background-color: #4a4a4a" data-image="images/tumbler_meteorite_grey_1772804871359.png">
+                        <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                    <button class="color-btn" data-color="oatmeal" data-name="Oatmeal Beige" style="background-color: #dcd6cd" data-image="images/tumbler_oatmeal_1772804907053.png">
+                        <svg class="check-icon dark" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                    <button class="color-btn disabled" data-color="white" data-name="Glacier White" style="background-color: #f8f9fa" disabled>
+                        <svg class="check-icon dark" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span class="out-of-stock"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-footer">
+            <p class="footer-hint">Select a partner to proceed</p>
+            <div class="checkout-buttons">
+                <button class="btn-amazon">Amazon B2B</button>
+                <button class="btn-alibaba">Alibaba</button>
+            </div>
+            <button class="btn-quote">Request Custom Quote (1000+ units)</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

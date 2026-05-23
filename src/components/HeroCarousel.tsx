@@ -58,7 +58,7 @@ export default function HeroCarousel() {
         effect="fade"
         speed={1000}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
-        pagination={{ clickable: true, renderBullet: (index, className) => `<span class="${className} w-12 h-1 bg-white/50 rounded-none transition-all duration-300"></span>` }}
+        pagination={{ clickable: true }}
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
         className="w-full h-full"
       >
@@ -78,7 +78,7 @@ export default function HeroCarousel() {
             </div>
 
             {/* Text Overlay */}
-            <div className="absolute inset-0 flex flex-col justify-end pb-32 px-6 md:px-24">
+            <div className="absolute inset-0 flex flex-col justify-end pb-24 sm:pb-32 px-4 sm:px-6 md:px-24">
               <AnimatePresence mode="wait">
                 {activeIndex === index && (
                   <motion.div
@@ -102,7 +102,7 @@ export default function HeroCarousel() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.8, delay: 0.7 }}
-                      className="text-5xl md:text-7xl font-bold leading-tight mb-6 whitespace-pre-line font-serif"
+                      className="text-3xl sm:text-5xl md:text-7xl font-bold leading-tight mb-4 sm:mb-6 whitespace-pre-line font-serif"
                     >
                       {slide.title}
                     </motion.h1>
@@ -111,7 +111,7 @@ export default function HeroCarousel() {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ duration: 0.8, delay: 1 }}
-                      className="text-gray-300 text-lg md:text-xl font-light mb-8 max-w-md"
+                      className="text-gray-300 text-base sm:text-lg md:text-xl font-light mb-6 sm:mb-8 max-w-md"
                     >
                       {slide.description}
                     </motion.p>
@@ -122,7 +122,7 @@ export default function HeroCarousel() {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       transition={{ duration: 0.5, delay: 1.2 }}
-                      className="px-8 py-4 bg-white text-black font-medium tracking-wide rounded-full hover:bg-gray-100 transition-colors"
+                      className="px-6 py-3 sm:px-8 sm:py-4 bg-white text-black font-medium tracking-wide rounded-full hover:bg-gray-100 transition-colors text-sm sm:text-base"
                     >
                       Explore Collection
                     </motion.button>
@@ -133,11 +133,6 @@ export default function HeroCarousel() {
           </SwiperSlide>
         ))}
       </Swiper>
-      <style jsx global>{`
-        .swiper-pagination-bullet-active {
-          background-color: white !important;
-        }
-      `}</style>
     </section>
   );
 }

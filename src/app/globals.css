@@ -23,14 +23,24 @@ body {
 }
 
 /* Custom Swiper Styles for Hero Carousel */
-.swiper-pagination-bullet {
-  background: rgba(255, 255, 255, 0.5);
-  opacity: 1;
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.3) !important;
+  opacity: 1 !important;
+  width: 40px !important; 
+  height: 2px !important; 
+  border-radius: 0 !important; /* Force rectangular shape */
+  margin: 0 4px !important;
+  transition: all 0.3s ease !important;
+  display: inline-block !important;
 }
 
-.swiper-pagination-bullet-active {
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet-active,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet-active {
   background: white !important;
-  width: 48px !important;
+  width: 60px !important;
+  height: 2px !important; 
+  border-radius: 0 !important; /* Ensure active state is also a stick */
 }
 
 .swiper-button-next,
