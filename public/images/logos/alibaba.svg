@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 50" width="100%" height="100%">
+  <g transform="translate(10, 8)">
+    <!-- Face Icon -->
+    <path d="M 20,4 C 9,4 0,13 0,24 C 0,35 9,44 20,44 C 31,44 40,35 40,24 C 40,13 31,4 20,4 Z" fill="#ff6a00" />
+    <!-- Smile and Eye -->
+    <path d="M 9,21 A 2.5,2.5 0 1,1 14,21 A 2.5,2.5 0 1,1 9,21 Z" fill="#ffffff" />
+    <path d="M 12,32 C 16,35 24,35 28,32" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+  </g>
+  <text x="60" y="33" font-family="system-ui, -apple-system, sans-serif" font-weight="bold" font-size="24" fill="#ff6a00">Alibaba</text>
+</svg>

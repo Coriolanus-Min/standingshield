@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 50" width="100%" height="100%">
+  <text x="10" y="38" font-family="system-ui, -apple-system, sans-serif" font-weight="bold" font-size="34" letter-spacing="-2.5">
+    <tspan fill="#e53238">e</tspan>
+    <tspan fill="#0064d2" dy="-2">b</tspan>
+    <tspan fill="#fec435" dy="2">a</tspan>
+    <tspan fill="#86b817" dy="-1">y</tspan>
+  </text>
+</svg>

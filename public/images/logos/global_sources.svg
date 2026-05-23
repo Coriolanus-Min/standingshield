@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="100%" height="100%">
+  <g transform="translate(15, 15)">
+    <!-- Red Circular Emblem -->
+    <circle cx="25" cy="25" r="22" fill="#e60012" />
+    <!-- White abstract stylized globe curves -->
+    <path d="M 12,25 A 13,13 0 0,1 38,25" fill="none" stroke="#ffffff" stroke-width="3" />
+    <path d="M 17,17 A 13,13 0 0,0 33,33" fill="none" stroke="#ffffff" stroke-width="3" />
+  </g>
+  <!-- Text: "global sources" in black/red -->
+  <text x="80" y="48" font-family="system-ui, -apple-system, sans-serif" font-weight="bold" font-size="28" fill="#1a1a1a" letter-spacing="-0.5">global <tspan fill="#e60012">sources</tspan></text>
+</svg>
