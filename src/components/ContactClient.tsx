@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, Mail, MapPin, Phone, Send, Check, MessageSquare, Building2, Package } from "lucide-react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import Locations from "./Locations";
 
 const inquiryTypes = [
   { id: "wholesale", label: "Wholesale Inquiry", icon: Building2 },
@@ -63,10 +64,20 @@ export default function ContactClient() {
             <h1 className="text-4xl md:text-5xl font-serif text-white mb-6">
               Let&apos;s Build Together
             </h1>
-            <p className="text-gray-400 leading-relaxed mb-10 max-w-md">
+            <p className="text-gray-400 leading-relaxed mb-6 max-w-md">
               Whether you are looking for wholesale pricing, custom laser engraving,
               or a bulk order partnership, our B2B team is ready to shield your business.
             </p>
+
+            <div className="rounded-2xl border border-orange-500/20 bg-orange-500/10 p-4 mb-8">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-400 mb-2">
+                Verified B2B addresses
+              </p>
+              <ul className="space-y-2 text-sm text-gray-300">
+                <li>• Yiwu International Trade City Zone 6 is directly searchable on Google Maps and shows the trade-city district markers.</li>
+                <li>• Bangkok Free Trade Zone 7 is also map-verifiable with surrounding Thai-English signage and nearby landmarks.</li>
+              </ul>
+            </div>
 
             <div className="space-y-6">
               <div className="flex items-start gap-4">
@@ -98,7 +109,7 @@ export default function ContactClient() {
                       China: +86 15320012861
                     </a>
                     <a
-                      href="tel:+66627936884"
+                      href="tel:+66827936884"
                       className="block hover:text-white transition-colors"
                     >
                       Thailand: +66 827936884
@@ -113,10 +124,19 @@ export default function ContactClient() {
                 </div>
                 <div>
                   <h3 className="text-white font-medium mb-1">Headquarters</h3>
-                  <div className="text-gray-400 space-y-1">
-                    <p>Address 1: China Zhejiang Province Yiwu City, Yiwu International Trade City, Zone 6, B168</p>
-                    <p>Address 2: Bangkok Free Trade Zone 7, Bang Phli Yai, Bang Phli District, Samut Prakan 10540, Thailand</p>
+                  <div className="text-gray-400 space-y-2">
+                    <p className="font-medium text-white">China</p>
+                    <p>Yiwu International Trade City, Zone 6, B168, Yiwu, Zhejiang, China</p>
+                    <p className="font-medium text-white mt-3">Thailand</p>
+                    <p>Bangkok Free Trade Zone 7, Bang Phli Yai, Bang Phli District, Samut Prakan 10540, Thailand</p>
                   </div>
+                  <a
+                    href="#locations"
+                    className="inline-flex items-center gap-1.5 text-orange-500 hover:text-orange-400 transition-colors text-sm mt-3"
+                  >
+                    <MapPin className="w-3.5 h-3.5" />
+                    View on map
+                  </a>
                 </div>
               </div>
             </div>
@@ -277,6 +297,8 @@ export default function ContactClient() {
           </motion.div>
         </div>
       </div>
+
+      <Locations />
 
       <div className="mt-auto">
         <Footer />

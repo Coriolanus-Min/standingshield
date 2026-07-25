@@ -55,11 +55,33 @@ export default function Footer() {
             <ul className="space-y-4 mb-8">
               <li className="flex items-start text-gray-400">
                 <MapPin className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0 text-orange-500" />
-                <span>Address 1: China Zhejiang Province Yiwu City, Yiwu International Trade City, Zone 6, B168<br />Address 2: Bangkok Free Trade Zone 7, Bang Phli Yai, Bang Phli District, Samut Prakan 10540, Thailand</span>
+                <span>
+                  <span className="block text-white font-medium mb-1">China</span>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Yiwu%20International%20Trade%20City%20Zone%206%2C%20Yiwu%2C%20Zhejiang%2C%20China"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-orange-500 transition-colors"
+                  >
+                    Yiwu International Trade City, Zone 6, B168, Yiwu, Zhejiang, China
+                  </a>
+                  <span className="block text-white font-medium mt-3 mb-1">Thailand</span>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Bangkok%20Free%20Trade%20Zone%2C%20Bang%20Phli%2C%20Samut%20Prakan%2010540%2C%20Thailand"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-orange-500 transition-colors"
+                  >
+                    Bangkok Free Trade Zone 7, Bang Phli Yai, Bang Phli District, Samut Prakan 10540, Thailand
+                  </a>
+                </span>
               </li>
               <li className="flex items-center text-gray-400">
                 <Phone className="w-5 h-5 mr-3 flex-shrink-0 text-orange-500" />
-                <span>China: +86 15320012861<br />Thailand: +66 827936884</span>
+                <span>
+                  <a href="tel:+8615320012861" className="block hover:text-white transition-colors">China: +86 15320012861</a>
+                  <a href="tel:+66827936884" className="block hover:text-white transition-colors">Thailand: +66 827936884</a>
+                </span>
               </li>
               <li className="flex items-center text-gray-400">
                 <Mail className="w-5 h-5 mr-3 flex-shrink-0 text-orange-500" />
