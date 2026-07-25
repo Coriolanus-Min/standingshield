@@ -28,10 +28,11 @@ export default function Footer() {
           <div className="col-span-1">
             <h3 className="text-lg font-bold uppercase tracking-wider mb-6 text-white border-b border-orange-500/50 pb-2 inline-block">About Us</h3>
             <ul className="space-y-4">
-              <li><Link href="/#products" className="text-gray-400 hover:text-orange-500 transition-colors">Our Story</Link></li>
+              <li><Link href="/about" className="text-gray-400 hover:text-orange-500 transition-colors">Our Story</Link></li>
+              <li><Link href="/products" className="text-gray-400 hover:text-orange-500 transition-colors">All Products</Link></li>
               <li><Link href="/#factory" className="text-gray-400 hover:text-orange-500 transition-colors">Factory & Process</Link></li>
               <li><Link href="/#tech" className="text-gray-400 hover:text-orange-500 transition-colors">Material Science</Link></li>
-              <li><Link href="/#factory" className="text-gray-400 hover:text-orange-500 transition-colors">Sustainability</Link></li>
+              <li><Link href="/about#sustainability" className="text-gray-400 hover:text-orange-500 transition-colors">Sustainability</Link></li>
               <li><Link href="/contact" className="text-gray-400 hover:text-orange-500 transition-colors">Careers</Link></li>
             </ul>
           </div>
@@ -54,15 +55,15 @@ export default function Footer() {
             <ul className="space-y-4 mb-8">
               <li className="flex items-start text-gray-400">
                 <MapPin className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0 text-orange-500" />
-                <span>123 Industrial Park, Manufacturing District, Global Hub</span>
+                <span>Address 1: China Zhejiang Province Yiwu City, Yiwu International Trade City, Zone 6, B168<br />Address 2: Bangkok Free Trade Zone 7, Bang Phli Yai, Bang Phli District, Samut Prakan 10540, Thailand</span>
               </li>
               <li className="flex items-center text-gray-400">
                 <Phone className="w-5 h-5 mr-3 flex-shrink-0 text-orange-500" />
-                <span>+1 (800) 123-4567</span>
+                <span>China: +86 15320012861<br />Thailand: +66 827936884</span>
               </li>
               <li className="flex items-center text-gray-400">
                 <Mail className="w-5 h-5 mr-3 flex-shrink-0 text-orange-500" />
-                <a href="mailto:info@standingshield.com" className="hover:text-white transition-colors">b2b@standingshield.com</a>
+                <a href="mailto:publicuse113@gmail.com" className="hover:text-white transition-colors">publicuse113@gmail.com</a>
               </li>
             </ul>
 
@@ -84,13 +85,30 @@ export default function Footer() {
 
         </div>
 
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm mb-4 md:mb-0">
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-gray-500 text-sm order-2 md:order-1">
             &copy; {new Date().getFullYear()} Standing Shield. All rights reserved.
           </p>
-          <div className="flex space-x-6 text-sm">
-            <a href="#" className="text-gray-500 hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="text-gray-500 hover:text-white transition-colors">Terms of Service</a>
+
+          {/* Payment methods */}
+          <div className="flex flex-wrap items-center justify-center gap-2 order-1 md:order-2" aria-label="Accepted payment methods">
+            <span className="flex items-center gap-1.5 border border-white/10 rounded-md px-2.5 py-1.5" title="Mastercard">
+              <span className="w-3.5 h-3.5 rounded-full bg-red-500/80" />
+              <span className="w-3.5 h-3.5 rounded-full bg-orange-400/80 -ml-3" />
+            </span>
+            {["VISA", "AMEX", "PayPal", "Apple Pay", "G Pay"].map((method) => (
+              <span
+                key={method}
+                className="border border-white/10 rounded-md px-2.5 py-1.5 text-[10px] font-semibold tracking-wider text-gray-400"
+              >
+                {method}
+              </span>
+            ))}
+          </div>
+
+          <div className="flex space-x-6 text-sm order-3">
+            <Link href="/privacy" className="text-gray-500 hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="text-gray-500 hover:text-white transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

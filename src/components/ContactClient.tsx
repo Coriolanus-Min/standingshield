@@ -76,10 +76,10 @@ export default function ContactClient() {
                 <div>
                   <h3 className="text-white font-medium mb-1">Email</h3>
                   <a
-                    href="mailto:b2b@standingshield.com"
+                    href="mailto:publicuse113@gmail.com"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    b2b@standingshield.com
+                    publicuse113@gmail.com
                   </a>
                 </div>
               </div>
@@ -90,12 +90,20 @@ export default function ContactClient() {
                 </div>
                 <div>
                   <h3 className="text-white font-medium mb-1">Phone</h3>
-                  <a
-                    href="tel:+18001234567"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    +1 (800) 123-4567
-                  </a>
+                  <div className="space-y-1 text-gray-400">
+                    <a
+                      href="tel:+8615320012861"
+                      className="block hover:text-white transition-colors"
+                    >
+                      China: +86 15320012861
+                    </a>
+                    <a
+                      href="tel:+66627936884"
+                      className="block hover:text-white transition-colors"
+                    >
+                      Thailand: +66 827936884
+                    </a>
+                  </div>
                 </div>
               </div>
 
@@ -105,11 +113,10 @@ export default function ContactClient() {
                 </div>
                 <div>
                   <h3 className="text-white font-medium mb-1">Headquarters</h3>
-                  <p className="text-gray-400">
-                    123 Industrial Park<br />
-                    Manufacturing District<br />
-                    Global Hub
-                  </p>
+                  <div className="text-gray-400 space-y-1">
+                    <p>Address 1: China Zhejiang Province Yiwu City, Yiwu International Trade City, Zone 6, B168</p>
+                    <p>Address 2: Bangkok Free Trade Zone 7, Bang Phli Yai, Bang Phli District, Samut Prakan 10540, Thailand</p>
+                  </div>
                 </div>
               </div>
             </div>
