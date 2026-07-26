@@ -6,9 +6,9 @@ import { ExternalLink, MapPin, Phone } from "lucide-react";
 const locations = [
   {
     id: "china",
-    tag: "China · HQ & Showroom",
-    name: "Yiwu International Trade City",
-    address: "Zone 6, B168, Yiwu, Zhejiang, China",
+    tag: "Base 01 · China",
+    name: "Global Sourcing HQ",
+    address: "Yiwu International Trade City, Zone 6, B168, Yiwu, Zhejiang, China",
     phone: "+86 153 2001 2861",
     phoneHref: "tel:+8615320012861",
     query: "Yiwu International Trade City Zone 6, Yiwu, Zhejiang, China",
@@ -16,9 +16,9 @@ const locations = [
   },
   {
     id: "thailand",
-    tag: "Thailand · SEA Warehouse",
-    name: "Bangkok Free Trade Zone 7",
-    address: "Bang Phli Yai, Bang Phli District, Samut Prakan 10540, Thailand",
+    tag: "Base 02 · Thailand",
+    name: "SEA Fulfillment Center",
+    address: "Bangkok Free Trade Zone 7, Bang Phli Yai, Bang Phli District, Samut Prakan 10540, Thailand",
     phone: "+66 82 793 6884",
     phoneHref: "tel:+66827936884",
     query: "Bangkok Free Trade Zone, Bang Phli, Samut Prakan 10540, Thailand",

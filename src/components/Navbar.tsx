@@ -9,7 +9,8 @@ import SearchOverlay from "./SearchOverlay";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/#products", label: "Products" },
+  { href: "/products", label: "Products" },
+  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
   { href: "/faq", label: "FAQ" },
 ];

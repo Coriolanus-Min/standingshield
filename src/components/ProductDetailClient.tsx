@@ -2,13 +2,30 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
-import { ArrowLeft, Check, Minus, Plus, ShoppingBag, Star, Truck, Shield, RotateCcw, Award } from "lucide-react";
+import { ArrowLeft, Award, Box, Check, Image as ImageIcon, Minus, PenLine, Plus, RotateCcw, Shield, ShoppingBag, Star, Truck } from "lucide-react";
 import { Product } from "@/types/product";
 import { useCart } from "@/context/CartContext";
 import { products } from "@/data/products";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+
+const Tumbler3D = dynamic(() => import("./Tumbler3D"), {
+  ssr: false,
+  loading: () => (
+    <div className="flex items-center justify-center h-full text-gray-600 text-sm uppercase tracking-widest animate-pulse">
+      Loading 3D…
+    </div>
+  ),
+});
+
+// Pull a numeric value out of spec strings like "21.5cm"
+function parseSpecNumber(value: string | undefined, fallback: number): number {
+  if (!value) return fallback;
+  const n = parseFloat(value);
+  return Number.isFinite(n) ? n : fallback;
+}
 
 interface ProductDetailClientProps {
   product: Product;
@@ -20,6 +37,8 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
   const [quantity, setQuantity] = useState(product.minOrder);
   const [added, setAdded] = useState(false);
   const [activeTab, setActiveTab] = useState<"specs" | "features">("features");
+  const [viewMode, setViewMode] = useState<"photo" | "3d">("photo");
+  const [engraving, setEngraving] = useState("");
 
   const handleAddToCart = () => {
     if (!selectedColor.available) return;
@@ -49,28 +68,105 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
       {/* Product Hero */}
       <section className="px-6 md:px-12 max-w-7xl mx-auto pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="relative aspect-square bg-gradient-to-b from-white/[0.03] to-transparent rounded-3xl flex items-center justify-center p-6 sm:p-12 border border-white/5"
-          >
-            <motion.img
-              key={selectedColor.id}
-              src={selectedColor.image}
-              alt={product.name}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4 }}
-              className="max-h-full max-w-full object-contain"
-            />
-            {product.badge && (
-              <div className="absolute top-6 left-6 px-4 py-1.5 bg-orange-500 text-black text-xs font-bold uppercase tracking-wider rounded-full">
-                {product.badge}
+          {/* Image / Interactive 3D */}
+          <div>
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="relative aspect-square min-h-[320px] bg-gradient-to-b from-white/[0.03] to-transparent rounded-3xl flex items-center justify-center p-6 sm:p-12 border border-white/5 overflow-hidden"
+            >
+              {viewMode === "photo" ? (
+                <motion.img
+                  key={selectedColor.id}
+                  src={selectedColor.image}
+                  alt={product.name}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4 }}
+                  className="max-h-full max-w-full object-contain"
+                />
+              ) : (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.4 }}
+                  className="absolute inset-0"
+                >
+                  <Tumbler3D
+                    colorHex={selectedColor.hex}
+                    colorName={selectedColor.name}
+                    heightCm={parseSpecNumber(product.specs.Height, 21.5)}
+                    diameterCm={parseSpecNumber(product.specs.Diameter, 8.5)}
+                    heightLabel={product.specs.Height ?? "—"}
+                    diameterLabel={product.specs.Diameter ?? "—"}
+                    capacityLabel={product.specs.Capacity ?? product.capacity}
+                    weightLabel={product.specs.Weight ?? "—"}
+                    engravingText={engraving}
+                    showDimensions={false}
+                  />
+                </motion.div>
+              )}
+
+              {product.badge && viewMode === "photo" && (
+                <div className="absolute top-6 left-6 z-10 px-4 py-1.5 bg-orange-500 text-black text-xs font-bold uppercase tracking-wider rounded-full">
+                  {product.badge}
+                </div>
+              )}
+
+              {/* Photo / 3D toggle */}
+              <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-10 flex items-center gap-1 bg-black/60 backdrop-blur-sm border border-white/10 rounded-full p-1">
+                <button
+                  onClick={() => setViewMode("photo")}
+                  aria-pressed={viewMode === "photo"}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-wider transition-colors ${
+                    viewMode === "photo" ? "bg-white text-black" : "text-gray-400 hover:text-white"
+                  }`}
+                >
+                  <ImageIcon className="w-3.5 h-3.5" /> Photo
+                </button>
+                <button
+                  onClick={() => setViewMode("3d")}
+                  aria-pressed={viewMode === "3d"}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-wider transition-colors ${
+                    viewMode === "3d" ? "bg-orange-500 text-black" : "text-gray-400 hover:text-white"
+                  }`}
+                >
+                  <Box className="w-3.5 h-3.5" /> 3D
+                </button>
               </div>
+            </motion.div>
+
+            {/* Live engraving preview (3D mode) */}
+            {viewMode === "3d" && (
+              <motion.div
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.35 }}
+                className="mt-4 bg-white/[0.02] border border-white/5 rounded-2xl px-5 py-4"
+              >
+                <label
+                  htmlFor="engraving-preview"
+                  className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-gray-300"
+                >
+                  <PenLine className="w-3.5 h-3.5 text-orange-500" />
+                  Live Engraving Preview
+                </label>
+                <input
+                  id="engraving-preview"
+                  type="text"
+                  value={engraving}
+                  onChange={(e) => setEngraving(e.target.value)}
+                  maxLength={18}
+                  placeholder="YOUR BRAND HERE"
+                  className="mt-3 w-full bg-black/50 border border-white/10 rounded-full px-4 py-2.5 text-sm text-white uppercase tracking-[0.2em] placeholder:text-gray-600 focus:outline-none focus:border-orange-500/60 transition-colors"
+                />
+                <p className="text-gray-600 text-xs mt-2">
+                  Etched below the logo on the model — rotate to view. Complimentary engraving on wholesale orders of 500+ units.
+                </p>
+              </motion.div>
             )}
-          </motion.div>
+          </div>
 
           {/* Info */}
           <motion.div
@@ -282,19 +378,42 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-white/[0.02] rounded-xl border border-white/5 overflow-hidden"
+              className="grid grid-cols-1 lg:grid-cols-2 gap-6"
             >
-              {Object.entries(product.specs).map(([key, value], i, arr) => (
-                <div
-                  key={key}
-                  className={`flex justify-between items-center px-6 py-4 ${
-                    i !== arr.length - 1 ? "border-b border-white/5" : ""
-                  }`}
-                >
-                  <span className="text-gray-400 text-sm">{key}</span>
-                  <span className="text-white text-sm font-medium">{value}</span>
+              {/* Interactive 3D spec viewer */}
+              <div className="relative aspect-square lg:aspect-auto lg:min-h-[520px] min-h-[320px] bg-gradient-to-b from-white/[0.03] to-transparent rounded-2xl border border-white/5 overflow-hidden">
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 z-10 pointer-events-none">
+                  <span className="text-[10px] uppercase tracking-[0.3em] text-gray-500 border border-white/10 bg-black/50 backdrop-blur-sm rounded-full px-4 py-1.5">
+                    Interactive 3D Model
+                  </span>
                 </div>
-              ))}
+                <Tumbler3D
+                  colorHex={selectedColor.hex}
+                  colorName={selectedColor.name}
+                  heightCm={parseSpecNumber(product.specs.Height, 21.5)}
+                  diameterCm={parseSpecNumber(product.specs.Diameter, 8.5)}
+                  heightLabel={product.specs.Height ?? "—"}
+                  diameterLabel={product.specs.Diameter ?? "—"}
+                  capacityLabel={product.specs.Capacity ?? product.capacity}
+                  weightLabel={product.specs.Weight ?? "—"}
+                  engravingText={engraving}
+                />
+              </div>
+
+              {/* Spec table */}
+              <div className="bg-white/[0.02] rounded-xl border border-white/5 overflow-hidden self-start">
+                {Object.entries(product.specs).map(([key, value], i, arr) => (
+                  <div
+                    key={key}
+                    className={`flex justify-between items-center px-6 py-4 ${
+                      i !== arr.length - 1 ? "border-b border-white/5" : ""
+                    }`}
+                  >
+                    <span className="text-gray-400 text-sm">{key}</span>
+                    <span className="text-white text-sm font-medium">{value}</span>
+                  </div>
+                ))}
+              </div>
             </motion.div>
           )}
         </div>

@@ -38,6 +38,7 @@ yarn-error.log*
 
 # local IDE/agent settings
 .claude/
+.antigravitycli/
 
 # generated archives
 *.tar.gz

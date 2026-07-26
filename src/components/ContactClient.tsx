@@ -69,13 +69,27 @@ export default function ContactClient() {
               or a bulk order partnership, our B2B team is ready to shield your business.
             </p>
 
-            <div className="rounded-2xl border border-orange-500/20 bg-orange-500/10 p-4 mb-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-400 mb-2">
-                Verified B2B addresses
+            <div className="rounded-2xl border border-orange-500/20 bg-orange-500/[0.06] p-5 mb-8">
+              <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-orange-400 mb-3">
+                Two Bases · One Standard
               </p>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li>• Yiwu International Trade City Zone 6 is directly searchable on Google Maps and shows the trade-city district markers.</li>
-                <li>• Bangkok Free Trade Zone 7 is also map-verifiable with surrounding Thai-English signage and nearby landmarks.</li>
+              <ul className="space-y-3 text-sm text-gray-300">
+                <li className="flex gap-3">
+                  <span className="text-orange-500 font-mono text-xs mt-0.5 flex-shrink-0">01</span>
+                  <span>
+                    <span className="text-white font-medium">Global Sourcing HQ — Yiwu.</span>{" "}
+                    Product development, laser-engraving atelier and wholesale showroom inside the
+                    world&apos;s largest small-commodity trade hub.
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-orange-500 font-mono text-xs mt-0.5 flex-shrink-0">02</span>
+                  <span>
+                    <span className="text-white font-medium">SEA Fulfillment Center — Bangkok.</span>{" "}
+                    Bonded free-trade warehousing for fast, duty-optimized dispatch across
+                    Southeast Asia and beyond.
+                  </span>
+                </li>
               </ul>
             </div>
 
@@ -123,11 +137,11 @@ export default function ContactClient() {
                   <MapPin className="w-5 h-5 text-orange-500" />
                 </div>
                 <div>
-                  <h3 className="text-white font-medium mb-1">Headquarters</h3>
+                  <h3 className="text-white font-medium mb-1">Our Bases</h3>
                   <div className="text-gray-400 space-y-2">
-                    <p className="font-medium text-white">China</p>
+                    <p className="font-medium text-white">Global Sourcing HQ — China</p>
                     <p>Yiwu International Trade City, Zone 6, B168, Yiwu, Zhejiang, China</p>
-                    <p className="font-medium text-white mt-3">Thailand</p>
+                    <p className="font-medium text-white mt-3">SEA Fulfillment Center — Thailand</p>
                     <p>Bangkok Free Trade Zone 7, Bang Phli Yai, Bang Phli District, Samut Prakan 10540, Thailand</p>
                   </div>
                   <a

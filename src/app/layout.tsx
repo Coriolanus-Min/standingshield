@@ -22,6 +22,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://standingshield.com"),
   title: {
     default: "Standing Shield - Premium Insulated Drinkware",
     template: "%s | Standing Shield",

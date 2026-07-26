@@ -56,7 +56,7 @@ export default function Footer() {
               <li className="flex items-start text-gray-400">
                 <MapPin className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0 text-orange-500" />
                 <span>
-                  <span className="block text-white font-medium mb-1">China</span>
+                  <span className="block text-white font-medium mb-1">Global Sourcing HQ · China</span>
                   <a
                     href="https://www.google.com/maps/search/?api=1&query=Yiwu%20International%20Trade%20City%20Zone%206%2C%20Yiwu%2C%20Zhejiang%2C%20China"
                     target="_blank"
@@ -65,7 +65,7 @@ export default function Footer() {
                   >
                     Yiwu International Trade City, Zone 6, B168, Yiwu, Zhejiang, China
                   </a>
-                  <span className="block text-white font-medium mt-3 mb-1">Thailand</span>
+                  <span className="block text-white font-medium mt-3 mb-1">SEA Fulfillment Center · Thailand</span>
                   <a
                     href="https://www.google.com/maps/search/?api=1&query=Bangkok%20Free%20Trade%20Zone%2C%20Bang%20Phli%2C%20Samut%20Prakan%2010540%2C%20Thailand"
                     target="_blank"
