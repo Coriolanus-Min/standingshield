@@ -114,16 +114,25 @@ export default function Footer() {
 
           {/* Payment methods */}
           <div className="flex flex-wrap items-center justify-center gap-2 order-1 md:order-2" aria-label="Accepted payment methods">
-            <span className="flex items-center gap-1.5 border border-white/10 rounded-md px-2.5 py-1.5" title="Mastercard">
-              <span className="w-3.5 h-3.5 rounded-full bg-red-500/80" />
-              <span className="w-3.5 h-3.5 rounded-full bg-orange-400/80 -ml-3" />
-            </span>
-            {["VISA", "AMEX", "PayPal", "Apple Pay", "G Pay"].map((method) => (
+            {[
+              { name: "Visa", src: "/images/logos/payments/visa.svg", h: "max-h-[18px]" },
+              { name: "Mastercard", src: "/images/logos/payments/mastercard.svg", h: "max-h-[24px]" },
+              { name: "American Express", src: "/images/logos/payments/amex.svg", h: "max-h-[24px]" },
+              { name: "PayPal", src: "/images/logos/payments/paypal.svg", h: "max-h-[18px]" },
+              { name: "Apple Pay", src: "/images/logos/payments/applepay.svg", h: "max-h-[18px]" },
+              { name: "Google Pay", src: "/images/logos/payments/gpay.svg", h: "max-h-[18px]" },
+            ].map((method) => (
               <span
-                key={method}
-                className="border border-white/10 rounded-md px-2.5 py-1.5 text-[10px] font-semibold tracking-wider text-gray-400"
+                key={method.name}
+                title={method.name}
+                className="flex items-center justify-center h-8 w-14 bg-white rounded-md px-2"
               >
-                {method}
+                <img
+                  src={method.src}
+                  alt={method.name}
+                  loading="lazy"
+                  className={`${method.h} max-w-full w-auto object-contain`}
+                />
               </span>
             ))}
           </div>
