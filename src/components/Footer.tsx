@@ -3,34 +3,38 @@ import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone } from "luc
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white pt-20 pb-10 border-t border-white/10">
-      <div className="container mx-auto px-6 md:px-12">
+    <footer className="w-full max-w-[100vw] overflow-x-clip bg-black text-white pt-20 pb-10 border-t border-white/10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-          
           {/* Brand Column */}
           <div className="col-span-1 md:col-span-1 border-r border-white/10 pr-8 hidden md:block">
-             <h2 className="text-white font-serif text-3xl tracking-widest uppercase font-bold mb-4 w-full">
-               Standing<br/><span className="text-orange-500 opacity-80 text-xl font-light lowercase font-sans block mt-1">shield</span>
-             </h2>
-             <p className="text-gray-400 text-sm mt-6 leading-relaxed">
-               Hardcore insulation meets urban aesthetics. We engineer premium, laser-engraved stainless steel drinkware built for the wild, sleek enough for the city. 
-             </p>
+            <h2 className="text-white font-serif text-3xl tracking-widest uppercase font-bold mb-4 w-full">
+              Standing<br />
+              <span className="text-orange-500 opacity-80 text-xl font-light lowercase font-sans block mt-1">
+                shield
+              </span>
+            </h2>
+            <p className="text-gray-400 text-sm mt-6 leading-relaxed">
+              Hardcore insulation meets urban aesthetics. We engineer premium, laser-engraved stainless steel drinkware built for the wild, sleek enough for the city.
+            </p>
           </div>
 
-          <div className="col-span-1 md:hidden mb-8">
-             <h2 className="text-white font-serif text-2xl tracking-widest uppercase font-bold mb-2">
-               Standing <span className="text-orange-500 opacity-80 text-lg font-light lowercase font-sans">shield</span>
-             </h2>
-             <p className="text-gray-400 text-sm mt-4">Premium insulated drinkware for every scene.</p>
+          <div className="col-span-1 md:hidden mb-4">
+            <h2 className="text-white font-serif text-2xl tracking-widest uppercase font-bold mb-2">
+              Standing <span className="text-orange-500 opacity-80 text-lg font-light lowercase font-sans">shield</span>
+            </h2>
+            <p className="text-gray-400 text-sm mt-3">Premium insulated drinkware for every scene.</p>
           </div>
 
           {/* About Us */}
           <div className="col-span-1">
-            <h3 className="text-lg font-bold uppercase tracking-wider mb-6 text-white border-b border-orange-500/50 pb-2 inline-block">About Us</h3>
+            <h3 className="text-lg font-bold uppercase tracking-wider mb-6 text-white border-b border-orange-500/50 pb-2 inline-block">
+              About Us
+            </h3>
             <ul className="space-y-4">
               <li><Link href="/about" className="text-gray-400 hover:text-orange-500 transition-colors">Our Story</Link></li>
               <li><Link href="/products" className="text-gray-400 hover:text-orange-500 transition-colors">All Products</Link></li>
-              <li><Link href="/#factory" className="text-gray-400 hover:text-orange-500 transition-colors">Factory & Process</Link></li>
+              <li><Link href="/#factory" className="text-gray-400 hover:text-orange-500 transition-colors">Factory &amp; Process</Link></li>
               <li><Link href="/#tech" className="text-gray-400 hover:text-orange-500 transition-colors">Material Science</Link></li>
               <li><Link href="/about#sustainability" className="text-gray-400 hover:text-orange-500 transition-colors">Sustainability</Link></li>
               <li><Link href="/contact" className="text-gray-400 hover:text-orange-500 transition-colors">Careers</Link></li>
@@ -39,11 +43,13 @@ export default function Footer() {
 
           {/* Wholesale & Support */}
           <div className="col-span-1">
-            <h3 className="text-lg font-bold uppercase tracking-wider mb-6 text-white border-b border-orange-500/50 pb-2 inline-block">Support</h3>
+            <h3 className="text-lg font-bold uppercase tracking-wider mb-6 text-white border-b border-orange-500/50 pb-2 inline-block">
+              Support
+            </h3>
             <ul className="space-y-4">
               <li><Link href="/contact" className="text-gray-400 hover:text-orange-500 transition-colors">B2B Wholesale Inquiry</Link></li>
               <li><Link href="/contact" className="text-gray-400 hover:text-orange-500 transition-colors">Custom Logo Etching</Link></li>
-              <li><Link href="/faq" className="text-gray-400 hover:text-orange-500 transition-colors">Shipping & Returns</Link></li>
+              <li><Link href="/faq" className="text-gray-400 hover:text-orange-500 transition-colors">Shipping &amp; Returns</Link></li>
               <li><Link href="/faq" className="text-gray-400 hover:text-orange-500 transition-colors">Lifetime Warranty</Link></li>
               <li><Link href="/faq" className="text-gray-400 hover:text-orange-500 transition-colors">FAQ</Link></li>
             </ul>
@@ -51,11 +57,13 @@ export default function Footer() {
 
           {/* Contact & Socials */}
           <div className="col-span-1">
-            <h3 className="text-lg font-bold uppercase tracking-wider mb-6 text-white border-b border-orange-500/50 pb-2 inline-block">Contact</h3>
+            <h3 className="text-lg font-bold uppercase tracking-wider mb-6 text-white border-b border-orange-500/50 pb-2 inline-block">
+              Contact
+            </h3>
             <ul className="space-y-4 mb-8">
               <li className="flex items-start text-gray-400">
                 <MapPin className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0 text-orange-500" />
-                <span>
+                <span className="text-sm">
                   <span className="block text-white font-medium mb-1">Global Sourcing HQ · China</span>
                   <a
                     href="https://www.google.com/maps/search/?api=1&query=Yiwu%20International%20Trade%20City%20Zone%206%2C%20Yiwu%2C%20Zhejiang%2C%20China"
@@ -76,16 +84,18 @@ export default function Footer() {
                   </a>
                 </span>
               </li>
-              <li className="flex items-center text-gray-400">
+              <li className="flex items-center text-gray-400 text-sm">
                 <Phone className="w-5 h-5 mr-3 flex-shrink-0 text-orange-500" />
                 <span>
                   <a href="tel:+8615320012861" className="block hover:text-white transition-colors">China: +86 15320012861</a>
                   <a href="tel:+66827936884" className="block hover:text-white transition-colors">Thailand: +66 827936884</a>
                 </span>
               </li>
-              <li className="flex items-center text-gray-400">
+              <li className="flex items-center text-gray-400 text-sm">
                 <Mail className="w-5 h-5 mr-3 flex-shrink-0 text-orange-500" />
-                <a href="mailto:publicuse113@gmail.com" className="hover:text-white transition-colors">publicuse113@gmail.com</a>
+                <a href="mailto:publicuse113@gmail.com" className="hover:text-white transition-colors break-all">
+                  publicuse113@gmail.com
+                </a>
               </li>
             </ul>
 
@@ -104,11 +114,10 @@ export default function Footer() {
               </a>
             </div>
           </div>
-
         </div>
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-gray-500 text-sm order-2 md:order-1">
+          <p className="text-gray-500 text-sm order-2 md:order-1 text-center md:text-left">
             &copy; {new Date().getFullYear()} Standing Shield. All rights reserved.
           </p>
 

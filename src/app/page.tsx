@@ -12,7 +12,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black flex flex-col items-center justify-between">
+    <main className="min-h-screen w-full max-w-[100vw] overflow-x-clip bg-black">
       <Navbar />
       <HeroCarousel />
       <TrustBar />

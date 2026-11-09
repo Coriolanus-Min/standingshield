@@ -132,7 +132,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
               {selectedColor.id === color.id && (
                 <Check
                   className={`w-3 h-3 mx-auto ${
-                    ["white", "oatmeal", "silver", "pink-cat", "cow"].includes(color.id)
+                    ["white", "oatmeal", "silver", "pink-cat", "cow", "cream", "ombre", "couture-pink", "sage"].includes(color.id)
                       ? "text-black"
                       : "text-white"
                   }`}

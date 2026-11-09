@@ -23,7 +23,7 @@ export default function ProductsPage() {
             Choose Your Shield
           </h1>
           <p className="text-gray-400 max-w-xl mx-auto">
-            Three sizes. One uncompromising standard. Engineered for every scene, built to last a lifetime.
+            Six signature silhouettes. One uncompromising standard. Engineered for every scene, built to last a lifetime.
           </p>
         </div>
 

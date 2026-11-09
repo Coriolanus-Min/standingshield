@@ -35,8 +35,8 @@ export default function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 grid grid-cols-3 items-center px-6 md:px-12 py-6 transition-all duration-300 ${
-          scrolled ? "bg-black/80 backdrop-blur-md py-4" : "bg-transparent"
+        className={`fixed top-0 left-0 right-0 w-full max-w-[100vw] z-50 grid grid-cols-3 items-center px-4 sm:px-6 md:px-12 py-4 sm:py-6 transition-all duration-300 ${
+          scrolled ? "bg-black/80 backdrop-blur-md py-3.5 sm:py-4" : "bg-transparent"
         }`}
       >
         {/* 1. Left Section (1/3 width) */}
@@ -64,17 +64,17 @@ export default function Navbar() {
         {/* 2. Center Section (Perfectly Centered) */}
         <div className="flex justify-center">
           <Link href="/" className="flex flex-col items-center group">
-            <h1 className="text-white font-serif text-2xl md:text-3xl tracking-[0.2em] uppercase font-bold leading-none text-center">
+            <h1 className="text-white font-serif text-xl sm:text-2xl md:text-3xl tracking-[0.15em] sm:tracking-[0.2em] uppercase font-bold leading-none text-center">
               Standing
             </h1>
-            <span className="text-orange-500 opacity-90 text-[10px] md:text-xs font-light lowercase font-sans tracking-[0.6em] mt-1.5 transition-all group-hover:tracking-[0.8em]">
+            <span className="text-orange-500 opacity-90 text-[9px] sm:text-[10px] md:text-xs font-light lowercase font-sans tracking-[0.45em] sm:tracking-[0.6em] mt-1 sm:mt-1.5 transition-all group-hover:tracking-[0.8em]">
               shield
             </span>
           </Link>
         </div>
 
         {/* 3. Right Section (1/3 width) */}
-        <div className="flex items-center justify-end gap-4 md:gap-6">
+        <div className="flex items-center justify-end gap-3.5 sm:gap-4 md:gap-6">
           <button
             onClick={() => setSearchOpen(true)}
             aria-label="Search"
