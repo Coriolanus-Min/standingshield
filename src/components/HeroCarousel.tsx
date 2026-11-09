@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Pagination } from "swiper/modules";
 import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, ArrowDown } from "lucide-react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -16,43 +18,53 @@ const slides = [
     image: "/images/standing_shield_active_life.png",
     subtitle: "Active Life",
     title: "Stand Firm,\nStay Cool.",
-    description: "Your Standing Shield tumbler, laser-engraved with our signature camel rider, standing by your side at the gym.",
+    description:
+      "Your Standing Shield tumbler, laser-engraved with our signature camel rider, standing by your side at the gym.",
+    categoryHint: "Sport Bottle",
   },
   {
     id: "outdoor",
     image: "/images/standing_shield_outdoor_escape.png",
     subtitle: "Outdoor Escape",
     title: "Built for\nthe Wild.",
-    description: "Rugged durability with a refined laser-engraved finish. Your all-scene shield for any adventure.",
+    description:
+      "Rugged durability with a refined laser-engraved finish. Your all-scene shield for any adventure.",
+    categoryHint: "Classic Tumbler",
   },
   {
     id: "urban",
     image: "/images/standing_shield_urban_rush.png",
     subtitle: "Urban Rush",
     title: "Shield Your\nMorning.",
-    description: "Sleek, minimalist matte black design featuring our elegant camel logo for your daily commute.",
+    description:
+      "Sleek, minimalist matte design featuring our coin-scale camel emblem for your daily commute.",
+    categoryHint: "Transit Bottle",
   },
   {
     id: "deep_work",
     image: "/images/standing_shield_deep_work.png",
     subtitle: "Deep Work",
     title: "Focus.\nWe Guard the Rest.",
-    description: "Keep your coffee hot and your focus sharp with our premium engraved tumblers on your desk.",
+    description:
+      "Keep your coffee hot and your focus sharp with our precision-engineered vessels on your desk.",
+    categoryHint: "Coffee Cup",
   },
   {
     id: "road_trip",
     image: "/images/scene_road_trip.png",
     subtitle: "Road Trip",
     title: "Shield Your\nJourney.",
-    description: "Perfectly fits your luxury car cup holder. Travel in style with our signature laser-engraved logo.",
-  }
+    description:
+      "Tapered to fit your car cup holder effortlessly. Travel in style with our signature laser-etched mark.",
+    categoryHint: "Retro Bottle",
+  },
 ];
 
 export default function HeroCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="relative h-screen w-full bg-black overflow-hidden">
+    <section className="relative h-screen w-full max-w-[100vw] bg-black overflow-hidden">
       <Swiper
         modules={[Autoplay, EffectFade, Pagination]}
         effect="fade"
@@ -97,8 +109,8 @@ export default function HeroCarousel() {
                     >
                       {slide.subtitle}
                     </motion.p>
-                    
-                    <motion.h1 
+
+                    <motion.h1
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.8, delay: 0.7 }}
@@ -107,7 +119,7 @@ export default function HeroCarousel() {
                       {slide.title}
                     </motion.h1>
 
-                    <motion.p 
+                    <motion.p
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ duration: 0.8, delay: 1 }}
@@ -116,16 +128,27 @@ export default function HeroCarousel() {
                       {slide.description}
                     </motion.p>
 
-                    <motion.button 
-                      initial={{ opacity: 0, scale: 0.9 }}
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.95 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      transition={{ duration: 0.5, delay: 1.2 }}
-                      className="px-6 py-3 sm:px-8 sm:py-4 bg-white text-black font-medium tracking-wide rounded-full hover:bg-gray-100 transition-colors text-sm sm:text-base"
+                      transition={{ duration: 0.5, delay: 1.1 }}
+                      className="flex flex-wrap items-center gap-3 sm:gap-4"
                     >
-                      Explore Collection
-                    </motion.button>
+                      <Link
+                        href="/products"
+                        className="inline-flex items-center gap-2.5 px-6 py-3.5 sm:px-8 sm:py-4 bg-white text-black font-medium tracking-wide rounded-full hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all text-sm sm:text-base shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+                      >
+                        Explore Collection
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                      <a
+                        href="#products"
+                        className="inline-flex items-center gap-2 px-5 py-3.5 sm:px-6 sm:py-4 bg-black/40 backdrop-blur-md border border-white/25 text-white font-medium tracking-wide rounded-full hover:bg-white/10 hover:border-white/40 transition-all text-sm sm:text-base"
+                      >
+                        Featured Picks
+                        <ArrowDown className="w-4 h-4 text-orange-400" />
+                      </a>
+                    </motion.div>
                   </motion.div>
                 )}
               </AnimatePresence>
