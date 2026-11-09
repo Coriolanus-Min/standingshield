@@ -25,7 +25,10 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
     openCart();
   };
 
-  const defaultImage = product.colors[0]?.image || "/images/tumbler_midnight_black_1772804852319.png";
+  const currentImage =
+    selectedColor?.image ||
+    product.colors[0]?.image ||
+    "/images/tumbler_midnight_black_1772804852319.png";
 
   return (
     <motion.div
@@ -45,8 +48,8 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
       {/* Image Area */}
       <Link href={`/products/${product.slug}`} className="block relative aspect-square bg-gradient-to-b from-white/[0.03] to-transparent p-8">
         <img
-          src={defaultImage}
-          alt={product.name}
+          src={currentImage}
+          alt={`${product.name} - ${selectedColor?.name || ""}`}
           className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
         />
       </Link>

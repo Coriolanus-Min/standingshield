@@ -13,28 +13,28 @@ import "swiper/css/pagination";
 const slides = [
   {
     id: "active",
-    image: "/images/scene_active_life.png",
+    image: "/images/standing_shield_active_life.png",
     subtitle: "Active Life",
     title: "Stand Firm,\nStay Cool.",
     description: "Your Standing Shield tumbler, laser-engraved with our signature camel rider, standing by your side at the gym.",
   },
   {
     id: "outdoor",
-    image: "/images/scene_outdoor_escape.png",
+    image: "/images/standing_shield_outdoor_escape.png",
     subtitle: "Outdoor Escape",
     title: "Built for\nthe Wild.",
     description: "Rugged durability with a refined laser-engraved finish. Your all-scene shield for any adventure.",
   },
   {
     id: "urban",
-    image: "/images/scene_urban_rush.png",
+    image: "/images/standing_shield_urban_rush.png",
     subtitle: "Urban Rush",
     title: "Shield Your\nMorning.",
     description: "Sleek, minimalist matte black design featuring our elegant camel logo for your daily commute.",
   },
   {
     id: "deep_work",
-    image: "/images/scene_deep_work.png",
+    image: "/images/standing_shield_deep_work.png",
     subtitle: "Deep Work",
     title: "Focus.\nWe Guard the Rest.",
     description: "Keep your coffee hot and your focus sharp with our premium engraved tumblers on your desk.",

@@ -20,6 +20,11 @@ export const products: Product[] = [
         name: "Midnight Black",
         hex: "#111111",
         image: "/images/tumbler_midnight_black_1772804852319.png",
+        gallery: [
+          "/images/tumbler_midnight_black_1772804852319.png",
+          "/images/standing_shield_active_life.png",
+          "/images/standing_shield_urban_rush.png",
+        ],
         available: true,
       },
       {
@@ -27,6 +32,11 @@ export const products: Product[] = [
         name: "Meteorite Grey",
         hex: "#4a4a4a",
         image: "/images/tumbler_meteorite_grey_1772804871359.png",
+        gallery: [
+          "/images/tumbler_meteorite_grey_1772804871359.png",
+          "/images/standing_shield_deep_work.png",
+          "/images/standing_shield_urban_rush.png",
+        ],
         available: true,
       },
       {
@@ -34,6 +44,11 @@ export const products: Product[] = [
         name: "Oatmeal Beige",
         hex: "#dcd6cd",
         image: "/images/tumbler_oatmeal_1772804907053.png",
+        gallery: [
+          "/images/tumbler_oatmeal_1772804907053.png",
+          "/images/standing_shield_outdoor_escape.png",
+          "/images/tumbler_oatmeal_studio.png",
+        ],
         available: true,
       },
     ],
@@ -81,6 +96,11 @@ export const products: Product[] = [
         name: "Midnight Black",
         hex: "#111111",
         image: "/images/tumbler_midnight_black_1772804852319.png",
+        gallery: [
+          "/images/tumbler_midnight_black_1772804852319.png",
+          "/images/standing_shield_urban_rush.png",
+          "/images/standing_shield_active_life.png",
+        ],
         available: true,
       },
       {
@@ -88,6 +108,11 @@ export const products: Product[] = [
         name: "Meteorite Grey",
         hex: "#4a4a4a",
         image: "/images/tumbler_meteorite_grey_1772804871359.png",
+        gallery: [
+          "/images/tumbler_meteorite_grey_1772804871359.png",
+          "/images/standing_shield_deep_work.png",
+          "/images/standing_shield_urban_rush.png",
+        ],
         available: true,
       },
       {
@@ -95,6 +120,11 @@ export const products: Product[] = [
         name: "Oatmeal Beige",
         hex: "#dcd6cd",
         image: "/images/tumbler_oatmeal_1772804907053.png",
+        gallery: [
+          "/images/tumbler_oatmeal_1772804907053.png",
+          "/images/standing_shield_outdoor_escape.png",
+          "/images/tumbler_oatmeal_studio.png",
+        ],
         available: true,
       },
     ],
@@ -141,6 +171,11 @@ export const products: Product[] = [
         name: "Midnight Black",
         hex: "#111111",
         image: "/images/tumbler_midnight_black_1772804852319.png",
+        gallery: [
+          "/images/tumbler_midnight_black_1772804852319.png",
+          "/images/standing_shield_active_life.png",
+          "/images/standing_shield_outdoor_escape.png",
+        ],
         available: true,
       },
       {
@@ -148,6 +183,11 @@ export const products: Product[] = [
         name: "Meteorite Grey",
         hex: "#4a4a4a",
         image: "/images/tumbler_meteorite_grey_1772804871359.png",
+        gallery: [
+          "/images/tumbler_meteorite_grey_1772804871359.png",
+          "/images/standing_shield_deep_work.png",
+          "/images/standing_shield_outdoor_escape.png",
+        ],
         available: true,
       },
       {
@@ -155,6 +195,11 @@ export const products: Product[] = [
         name: "Oatmeal Beige",
         hex: "#dcd6cd",
         image: "/images/tumbler_oatmeal_1772804907053.png",
+        gallery: [
+          "/images/tumbler_oatmeal_1772804907053.png",
+          "/images/standing_shield_outdoor_escape.png",
+          "/images/tumbler_oatmeal_studio.png",
+        ],
         available: true,
       },
     ],

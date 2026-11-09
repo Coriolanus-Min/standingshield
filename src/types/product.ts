@@ -3,6 +3,7 @@ export interface ProductColor {
   name: string;
   hex: string;
   image: string;
+  gallery?: string[];
   available: boolean;
 }
 

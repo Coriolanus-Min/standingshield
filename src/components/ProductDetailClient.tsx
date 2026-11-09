@@ -3,9 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, Award, Box, Check, Image as ImageIcon, Minus, PenLine, Plus, RotateCcw, Shield, ShoppingBag, Star, Truck } from "lucide-react";
-import { Product } from "@/types/product";
+import { Product, ProductColor } from "@/types/product";
 import { useCart } from "@/context/CartContext";
 import { products } from "@/data/products";
 import Navbar from "./Navbar";
@@ -34,11 +34,24 @@ interface ProductDetailClientProps {
 export default function ProductDetailClient({ product }: ProductDetailClientProps) {
   const { addItem, openCart } = useCart();
   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
+  const [activeImage, setActiveImage] = useState(
+    product.colors[0]?.gallery?.[0] || product.colors[0]?.image
+  );
   const [quantity, setQuantity] = useState(product.minOrder);
   const [added, setAdded] = useState(false);
   const [activeTab, setActiveTab] = useState<"specs" | "features">("features");
   const [viewMode, setViewMode] = useState<"photo" | "3d">("photo");
   const [engraving, setEngraving] = useState("");
+
+  const handleSelectColor = (color: ProductColor) => {
+    if (!color.available) return;
+    setSelectedColor(color);
+    setActiveImage(color.gallery?.[0] || color.image);
+  };
+
+  const currentGallery = selectedColor.gallery?.length
+    ? selectedColor.gallery
+    : [selectedColor.image];
 
   const handleAddToCart = () => {
     if (!selectedColor.available) return;
@@ -77,15 +90,22 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
               className="relative aspect-square min-h-[320px] bg-gradient-to-b from-white/[0.03] to-transparent rounded-3xl flex items-center justify-center p-6 sm:p-12 border border-white/5 overflow-hidden"
             >
               {viewMode === "photo" ? (
-                <motion.img
-                  key={selectedColor.id}
-                  src={selectedColor.image}
-                  alt={product.name}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4 }}
-                  className="max-h-full max-w-full object-contain"
-                />
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={`${selectedColor.id}-${activeImage}`}
+                    src={activeImage}
+                    alt={`${product.name} - ${selectedColor.name}`}
+                    initial={{ opacity: 0, scale: 0.96 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 1.02 }}
+                    transition={{ duration: 0.35, ease: "easeOut" }}
+                    className={`max-h-full max-w-full rounded-2xl ${
+                      activeImage === selectedColor.image
+                        ? "object-contain"
+                        : "w-full h-full object-cover"
+                    }`}
+                  />
+                </AnimatePresence>
               ) : (
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -136,6 +156,39 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
                 </button>
               </div>
             </motion.div>
+
+            {/* Thumbnail Gallery (套图切换) */}
+            {currentGallery.length > 1 && (
+              <div className="mt-4 flex items-center gap-3 overflow-x-auto pb-1">
+                {currentGallery.map((imgSrc, idx) => {
+                  const isSelected = viewMode === "photo" && activeImage === imgSrc;
+                  return (
+                    <motion.button
+                      key={`${selectedColor.id}-thumb-${idx}`}
+                      whileHover={{ y: -2 }}
+                      whileTap={{ scale: 0.96 }}
+                      onClick={() => {
+                        setViewMode("photo");
+                        setActiveImage(imgSrc);
+                      }}
+                      className={`relative w-20 h-20 rounded-2xl overflow-hidden border-2 transition-all flex-shrink-0 bg-white/[0.03] ${
+                        isSelected
+                          ? "border-orange-500 shadow-[0_0_20px_rgba(249,115,22,0.3)] opacity-100"
+                          : "border-white/10 opacity-60 hover:opacity-90 hover:border-white/30"
+                      }`}
+                    >
+                      <img
+                        src={imgSrc}
+                        alt={`${selectedColor.name} view ${idx + 1}`}
+                        className={`w-full h-full ${
+                          idx === 0 ? "object-contain p-2" : "object-cover"
+                        }`}
+                      />
+                    </motion.button>
+                  );
+                })}
+              </div>
+            )}
 
             {/* Live engraving preview (3D mode) */}
             {viewMode === "3d" && (
@@ -232,7 +285,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
                 {product.colors.map((color) => (
                   <button
                     key={color.id}
-                    onClick={() => color.available && setSelectedColor(color)}
+                    onClick={() => handleSelectColor(color)}
                     className={`relative w-12 h-12 rounded-full flex items-center justify-center transition-all ${
                       selectedColor.id === color.id
                         ? "ring-2 ring-white ring-offset-2 ring-offset-black scale-110 shadow-[0_0_20px_rgba(255,255,255,0.2)]"
