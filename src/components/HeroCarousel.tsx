@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Pagination } from "swiper/modules";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ArrowDown } from "lucide-react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -20,7 +19,6 @@ const slides = [
     title: "Stand Firm,\nStay Cool.",
     description:
       "Your Standing Shield tumbler, laser-engraved with our signature camel rider, standing by your side at the gym.",
-    categoryHint: "Sport Bottle",
   },
   {
     id: "outdoor",
@@ -29,7 +27,6 @@ const slides = [
     title: "Built for\nthe Wild.",
     description:
       "Rugged durability with a refined laser-engraved finish. Your all-scene shield for any adventure.",
-    categoryHint: "Classic Tumbler",
   },
   {
     id: "urban",
@@ -37,8 +34,7 @@ const slides = [
     subtitle: "Urban Rush",
     title: "Shield Your\nMorning.",
     description:
-      "Sleek, minimalist matte design featuring our coin-scale camel emblem for your daily commute.",
-    categoryHint: "Transit Bottle",
+      "Sleek, minimalist matte black design featuring our elegant camel logo for your daily commute.",
   },
   {
     id: "deep_work",
@@ -46,8 +42,7 @@ const slides = [
     subtitle: "Deep Work",
     title: "Focus.\nWe Guard the Rest.",
     description:
-      "Keep your coffee hot and your focus sharp with our precision-engineered vessels on your desk.",
-    categoryHint: "Coffee Cup",
+      "Keep your coffee hot and your focus sharp with our premium engraved tumblers on your desk.",
   },
   {
     id: "road_trip",
@@ -55,8 +50,7 @@ const slides = [
     subtitle: "Road Trip",
     title: "Shield Your\nJourney.",
     description:
-      "Tapered to fit your car cup holder effortlessly. Travel in style with our signature laser-etched mark.",
-    categoryHint: "Retro Bottle",
+      "Perfectly fits your luxury car cup holder. Travel in style with our signature laser-engraved logo.",
   },
 ];
 
@@ -129,25 +123,19 @@ export default function HeroCarousel() {
                     </motion.p>
 
                     <motion.div
-                      initial={{ opacity: 0, scale: 0.95 }}
+                      initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.5, delay: 1.1 }}
-                      className="flex flex-wrap items-center gap-3 sm:gap-4"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      transition={{ duration: 0.5, delay: 1.2 }}
+                      className="inline-block"
                     >
                       <Link
                         href="/products"
-                        className="inline-flex items-center gap-2.5 px-6 py-3.5 sm:px-8 sm:py-4 bg-white text-black font-medium tracking-wide rounded-full hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all text-sm sm:text-base shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+                        className="inline-block px-6 py-3 sm:px-8 sm:py-4 bg-white text-black font-medium tracking-wide rounded-full hover:bg-gray-100 transition-colors text-sm sm:text-base"
                       >
                         Explore Collection
-                        <ArrowRight className="w-4 h-4" />
                       </Link>
-                      <a
-                        href="#products"
-                        className="inline-flex items-center gap-2 px-5 py-3.5 sm:px-6 sm:py-4 bg-black/40 backdrop-blur-md border border-white/25 text-white font-medium tracking-wide rounded-full hover:bg-white/10 hover:border-white/40 transition-all text-sm sm:text-base"
-                      >
-                        Featured Picks
-                        <ArrowDown className="w-4 h-4 text-orange-400" />
-                      </a>
                     </motion.div>
                   </motion.div>
                 )}

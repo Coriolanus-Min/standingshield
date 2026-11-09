@@ -1,13 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Scale } from "lucide-react";
 import { products } from "@/data/products";
 import ProductCard from "./ProductCard";
 
 export default function ProductsGrid() {
-  // Symbolic showcase on Home page: feature the top 3 flagship models
   const featuredProducts = products.slice(0, 3);
 
   return (
@@ -22,53 +19,40 @@ export default function ProductsGrid() {
           className="text-center mb-16"
         >
           <p className="text-orange-500 tracking-widest uppercase text-sm font-semibold mb-3">
-            Featured Flagships
+            The Collection
           </p>
           <h2 className="text-2xl sm:text-4xl md:text-6xl font-serif text-white uppercase tracking-wider mb-4">
             Choose Your Shield
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto">
-            Three flagship silhouettes from our six-series lineup. Engineered for every scene, built to last a lifetime.
+            Three sizes. One uncompromising standard. Engineered for every scene, built to last a lifetime.
           </p>
         </motion.div>
 
-        {/* Symbolic 3-Product Featured Row */}
+        {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {featuredProducts.map((product, index) => (
             <ProductCard key={product.id} product={product} index={index} />
           ))}
         </div>
 
-        {/* Full Catalog & B2B CTA */}
+        {/* B2B CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-14 flex flex-col items-center text-center gap-6"
+          className="mt-16 text-center"
         >
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href="/products"
-              className="inline-flex items-center gap-2.5 px-8 py-4 bg-white text-black font-medium rounded-full hover:bg-gray-100 transition-all text-sm tracking-wide shadow-[0_0_25px_rgba(255,255,255,0.15)]"
-            >
-              Explore Full Collection ({products.length} Series)
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link
-              href="/compare"
-              className="inline-flex items-center gap-2 px-7 py-4 border border-white/20 text-white rounded-full hover:bg-white/5 transition-colors text-sm tracking-wide"
-            >
-              <Scale className="w-4 h-4 text-orange-500" />
-              Compare All Models
-            </Link>
-          </div>
-          <p className="text-gray-500 text-xs sm:text-sm">
-            Looking for custom laser engraving or bulk OEM orders above 1,000 units?{" "}
-            <Link href="/contact" className="text-orange-400 hover:text-orange-300 underline underline-offset-4">
-              Request Custom Quote →
-            </Link>
+          <p className="text-gray-500 text-sm mb-4">
+            Looking for custom laser engraving or bulk orders above 1,000 units?
           </p>
+          <a
+            href="/contact"
+            className="inline-flex items-center gap-2 px-8 py-3 border border-white/20 text-white rounded-full hover:bg-white/5 transition-colors text-sm tracking-wide"
+          >
+            Request Custom Quote
+          </a>
         </motion.div>
       </div>
     </section>
