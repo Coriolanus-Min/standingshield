@@ -297,7 +297,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
                     {selectedColor.id === color.id && (
                       <Check
                         className={`w-5 h-5 ${
-                          color.id === "white" || color.id === "oatmeal"
+                          ["white", "oatmeal", "silver", "pink-cat", "cow"].includes(color.id)
                             ? "text-black"
                             : "text-white"
                         }`}

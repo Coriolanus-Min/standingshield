@@ -15,6 +15,7 @@ interface ProductCardProps {
 export default function ProductCard({ product, index = 0 }: ProductCardProps) {
   const { addItem, openCart } = useCart();
   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [added, setAdded] = useState(false);
 
   const handleAddToCart = () => {
@@ -25,10 +26,11 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
     openCart();
   };
 
-  const currentImage =
-    selectedColor?.image ||
-    product.colors[0]?.image ||
-    "/images/tumbler_midnight_black_1772804852319.png";
+  const gallery = selectedColor?.gallery?.length
+    ? selectedColor.gallery
+    : [selectedColor?.image || product.colors[0]?.image || "/images/tumbler_midnight_black_1772804852319.png"];
+
+  const currentImage = gallery[activeImageIndex] || gallery[0];
 
   return (
     <motion.div
@@ -46,13 +48,40 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
       )}
 
       {/* Image Area */}
-      <Link href={`/products/${product.slug}`} className="block relative aspect-square bg-gradient-to-b from-white/[0.03] to-transparent p-8">
+      <Link href={`/products/${product.slug}`} className="block relative aspect-square bg-gradient-to-b from-white/[0.03] to-transparent p-6">
         <img
           src={currentImage}
           alt={`${product.name} - ${selectedColor?.name || ""}`}
-          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+          className={`w-full h-full rounded-xl group-hover:scale-105 transition-transform duration-500 ${
+            activeImageIndex === 0 ? "object-contain" : "object-cover"
+          }`}
         />
       </Link>
+
+      {/* Gallery Thumbnails (4-Image Set Switcher) */}
+      {gallery.length > 1 && (
+        <div className="px-6 pt-2 flex items-center gap-2">
+          {gallery.map((imgSrc, idx) => (
+            <button
+              key={`${selectedColor.id}-card-thumb-${idx}`}
+              type="button"
+              onClick={() => setActiveImageIndex(idx)}
+              className={`w-12 h-12 rounded-lg overflow-hidden border transition-all flex-shrink-0 bg-white/[0.03] ${
+                activeImageIndex === idx
+                  ? "border-orange-500 ring-1 ring-orange-500/40 opacity-100"
+                  : "border-white/10 opacity-60 hover:opacity-100 hover:border-white/30"
+              }`}
+              title={`View image ${idx + 1}`}
+            >
+              <img
+                src={imgSrc}
+                alt={`${product.name} thumbnail ${idx + 1}`}
+                className={`w-full h-full ${idx === 0 ? "object-contain p-1" : "object-cover"}`}
+              />
+            </button>
+          ))}
+        </div>
+      )}
 
       {/* Content */}
       <div className="p-6">
@@ -86,7 +115,12 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
           {product.colors.map((color) => (
             <button
               key={color.id}
-              onClick={() => color.available && setSelectedColor(color)}
+              onClick={() => {
+                if (color.available) {
+                  setSelectedColor(color);
+                  setActiveImageIndex(0);
+                }
+              }}
               className={`w-6 h-6 rounded-full border-2 transition-all ${
                 selectedColor.id === color.id
                   ? "border-white scale-110"
@@ -98,7 +132,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
               {selectedColor.id === color.id && (
                 <Check
                   className={`w-3 h-3 mx-auto ${
-                    color.id === "white" || color.id === "oatmeal"
+                    ["white", "oatmeal", "silver", "pink-cat", "cow"].includes(color.id)
                       ? "text-black"
                       : "text-white"
                   }`}
